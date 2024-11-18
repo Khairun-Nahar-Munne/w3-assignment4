@@ -49,6 +49,7 @@
   }
   .popupTitle{
     color: white;
+    margin-left:60px;
   }
   
   .galleryTitle h3 {
@@ -104,7 +105,7 @@
   .nextButton {
     background-color: white;
     color: #007bff;
-    padding: 8px 8px;
+    padding: 8px 10px;
     border: none;
     border-radius: 100%;
     cursor: pointer;
@@ -156,6 +157,10 @@
         font-size: 14px;
         display: flex;
         align-items: center;
+      }
+      .popupTitle{
+        color: white;
+        margin-left:0px;
       }
       
       

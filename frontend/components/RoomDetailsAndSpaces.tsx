@@ -4,7 +4,7 @@ import { BedIcon } from 'lucide-react';
 
 const RoomDetailsAndSpaces = () => {
   return (
-    <section className="space-y-8 mt-10">
+    <section className="space-y-8 mt-5">
       {/* Room Details Section */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Rooms & beds</h2>

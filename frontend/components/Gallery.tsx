@@ -76,12 +76,13 @@ const Gallery: React.FC = () => {
                         {/* Close Button */}
                         <span className={styles.closeButton} onClick={closePopup}>
                             &times;
-                        </span>
+                        </span> <br /> 
                         {/* Image and Title */}
                         <img
                             id="gallery-image"
                             src={images[currentImageIndex].src}
                             alt={images[currentImageIndex].title}
+                            className="mx-auto mb-3"
                         />
                         <h3 className={styles.popupTitle}>{images[currentImageIndex].title}</h3>
                         {/* Image Navigation */}

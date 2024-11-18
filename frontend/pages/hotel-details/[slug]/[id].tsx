@@ -1,10 +1,17 @@
-import { GetServerSideProps, NextPage } from 'next';
-import Head from 'next/head';
-import { Hotel } from '@/types/hotel';
-import HotelInfo from '@/components/HotelDetails/HotelInfo';
-import Gallery from '@/components/HotelDetails/Gallery';
-import Amenities from '@/components/HotelDetails/Amenites';
-import RoomList from '@/components/HotelDetails/RoomList';
+import { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
+import { Hotel } from "@/types/hotel";
+import HotelInfo from "@/components/HotelDetails/HotelInfo";
+import Gallery from "@/components/HotelDetails/Gallery";
+import Amenities from "@/components/HotelDetails/Amenites";
+import RoomList from "@/components/HotelDetails/RoomList";
+import Header from "@/components/Header";
+import Banner from "@/components/Banner";
+import AboutProperty from "@/components/AboutProperty";
+import QuestionSearch from "@/components/QuestionSearch";
+import HouseRules from "@/components/HouseRules";
+import ReviewsSection from "@/components/ReviewsSection";
+import Footer from "@/components/Footer";
 
 interface Props {
   hotel: Hotel;
@@ -17,35 +24,52 @@ const HotelDetails: NextPage<Props> = ({ hotel }) => {
 
   return (
     <>
-      <Head>
-        <title>{`${hotel.title} | Hotel Details`}</title>
-        <meta name="description" content={hotel.description} />
-        <meta property="og:title" content={hotel.title} />
-        <meta property="og:description" content={hotel.description} />
-        {hotel.images[0] && (
-          <meta property="og:image" content={hotel.images[0]} />
-        )}
-      </Head>
-      <div className="container mx-auto px-4 py-8">
-        <HotelInfo hotel={hotel} />
+      <Header />
+      <main>
+        {/* Your main content goes here */}
+        <Banner />
         <Gallery images={hotel.images} />
-        <Amenities amenities={hotel.amenities} />
-        <RoomList rooms={hotel.rooms} />
-      </div>
+        <Head>
+          <title>{`${hotel.title} | Hotel Details`}</title>
+          <meta name="description" content={hotel.description} />
+          <meta property="og:title" content={hotel.title} />
+          <meta property="og:description" content={hotel.description} />
+          {hotel.images[0] && (
+            <meta property="og:image" content={hotel.images[0]} />
+          )}
+        </Head>
+        <div className="container mx-auto px-4 py-8">
+          <HotelInfo hotel={hotel} />
+          <Amenities amenities={hotel.amenities} />
+          <RoomList rooms={hotel.rooms} />
+        </div>
+        <AboutProperty />
+        <QuestionSearch />
+        <HouseRules />
+        <ReviewsSection />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  res,
+}) => {
   try {
     const { slug } = params as { slug: string };
-    
+
     // First, try to parse the slug as an ID (in case it's a numeric ID)
     const isId = /^\d+$/.test(slug);
-    
+
     // Fetch hotel data
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/hotels/${isId ? 'id' : 'slug'}/${slug}`
+      `${process.env.NEXT_PUBLIC_API_URL}/hotels/${
+        isId ? "id" : "slug"
+      }/${slug}`
     );
 
     if (!response.ok) {
@@ -54,13 +78,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
         const slugResponse = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/hotels/slug/${slug}`
         );
-        
+
         if (!slugResponse.ok) {
           return { notFound: true };
         }
-        
+
         const hotel = await slugResponse.json();
-        
+
         // If the slug doesn't match the current URL, redirect to the correct URL
         if (hotel.slug && hotel.slug !== slug) {
           return {
@@ -70,10 +94,10 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
             },
           };
         }
-        
+
         return { props: { hotel } };
       }
-      
+
       return { notFound: true };
     }
 
@@ -91,7 +115,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
 
     return { props: { hotel } };
   } catch (error) {
-    console.error('Error fetching hotel:', error);
+    console.error("Error fetching hotel:", error);
     return { notFound: true };
   }
 };
