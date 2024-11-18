@@ -31,7 +31,7 @@ export default function VacationListing() {
                 <title>Juneau Vacation Home | Stunning View + Beach Access</title>
             </Head>
 
-            <section className="max-w-7xl mx-auto px-4 py-8">
+            <section className=" mx-auto px-4 py-8">
                 <nav className="border-b border-gray-200 mb-6">
                     <div className="flex gap-6">
                         <Link href="#" className="px-4 py-2 text-blue-600 border-b-2 border-blue-600">

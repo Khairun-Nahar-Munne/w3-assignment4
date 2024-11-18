@@ -1,8 +1,14 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
-};
-
-export default nextConfig;
+module.exports = {
+  images: {
+    domains: ['localhost'], // Because your backend is running on localhost
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '5000',  // Your backend port
+        pathname: '/uploads/**',
+      },
+    ],
+  }
+}

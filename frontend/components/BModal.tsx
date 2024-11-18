@@ -39,7 +39,7 @@ const ShareModal = ({ isOpen, onClose }: ShareModalProps) => {
         <div className={`${styles.sharePopup} ${!isOpen && styles.hidden}`}>
             <div className={styles.shareContent}>
                 <Image
-                    src="/images/img1.jpg"
+                    src="/img1.jpg"
                     alt="Juneau Vacation Home"
                     width={100}
                     height={100}

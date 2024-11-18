@@ -14,11 +14,20 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tanstack/react-query": "^5.60.5",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
+    "axios": "^1.7.7",
+    "eslint-plugin-jest": "^28.9.0",
     "frontend": "file:",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lucide-react": "^0.460.0",
     "next": "15.0.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sass": "^1.81.0"
   },
   "devDependencies": {
     "@types/node": "^22",

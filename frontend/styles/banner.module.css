@@ -18,6 +18,7 @@
   .bannerHeadItem1 {
     color: rgba(0, 140, 255, 0.938);
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     font-weight: 600;
     font-size: 20px;
