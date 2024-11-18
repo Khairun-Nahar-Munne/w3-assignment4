@@ -1,12 +1,11 @@
 import { HotelService } from '../services/hotelService';
 import { Hotel, Room } from '../models/types';
 import fs from 'fs/promises';
-import { describe, beforeEach, it } from 'node:test';
 jest.mock('fs/promises');
 
 describe('HotelService', () => {
   let hotelService: HotelService;
-
+  
   const mockHotelData: Omit<Hotel, 'id' | 'slug'> = {
     title: 'Test Hotel',
     description: 'This is a test hotel',
@@ -157,13 +156,13 @@ describe('HotelService', () => {
         roomImage: '',
         bedroomCount: 1
       };
-      const mockHotel = {
-        ...mockHotelData,
-        id: 'test-id',
+      const mockHotel = { 
+        ...mockHotelData, 
+        id: 'test-id', 
         slug: 'test-hotel',
         rooms: [mockRoom]
       };
-
+      
       (fs.readFile as jest.Mock).mockResolvedValue(JSON.stringify(mockHotel));
       (fs.writeFile as jest.Mock).mockResolvedValue(undefined);
 
