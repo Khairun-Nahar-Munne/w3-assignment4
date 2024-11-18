@@ -1,0 +1,228 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .galleryMain {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .MobileImage{
+    display: none;
+  }
+  
+  .galleryItem {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .photoCount {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.599);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  .photoCountMobile{
+    display:none;
+  }
+  
+  .galleryTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .popupTitle{
+    color: white;
+  }
+  
+  .galleryTitle h3 {
+    color: white;
+    font-size: 16px;
+  }
+  
+  .galleryPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .galleryPopupContent {
+    background-color: #1e253a;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+  }
+  
+  .closeButton {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    color: white;
+  }
+  
+  .galleryNavigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .previousButton,
+  .nextButton {
+    background-color: white;
+    color: #007bff;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .previousButton:disabled,
+  .nextButton:disabled {
+    background-color: #ccccccad;
+    color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  #gallery-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+  }
+  
+
+  @media (max-width:780px){
+    .gallery {
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        width:100%;
+      }
+      .galleryHead {
+        margin: 0;
+      }
+      .MobileImage {
+        display: block;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        position: relative; /* Make sure this is positioned relative */
+      }
+      
+      .photoCountMobile {
+        display: block;
+        position: absolute;
+        bottom: 8px; /* Position at the bottom */
+        right: 8px;  /* Position at the right */
+        background: rgba(0, 0, 0, 0.599);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+      
+      
+      .galleryMain{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+      }
+    
+      .galleryItem {
+        display: none;
+      }
+      .TImage{
+        position: relative;
+        aspect-ratio: 16/9; 
+      }
+
+
+      .galleryItemInvisible {
+        display: none;
+      }
+    
+      #gallery-image {
+        height: 250px;
+      }
+    
+      .dots {
+        position: absolute;
+        margin-top: 190px;
+        left: 70%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+      }
+    
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.5;
+      }
+    
+      .photo-count1 {
+        background: rgba(0, 0, 0, 0.358);
+      }
+    
+      .galleryPopup {
+        z-index: 14;
+      }
+    
+      .galleryPopupContent{
+        z-index: 14;
+      }
+    
+      .dot.active {
+        opacity: 1;
+      }
+    
+      .actions {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+      }
+    
+      .btn {
+        background: white;
+      }
+  }

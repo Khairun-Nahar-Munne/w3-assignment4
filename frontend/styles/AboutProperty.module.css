@@ -1,0 +1,150 @@
+.aboutContainer {
+    margin-top: 40px;
+    max-width: 645px;
+  }
+  
+  .aboutContainer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .aboutContainer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .aboutPropertyDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px 0;
+  }
+  
+  .aboutPropertyManager {
+    margin: 30px 0;
+  }
+  
+  .aboutPropertyManager img {
+    height: auto;
+    width: auto;
+  }
+  
+  .aboutPropertyManager p {
+    font-size: 15px;
+  }
+  
+  .languages {
+    margin-top: 30px;
+  }
+  
+  .languages p {
+    font-size: 15px;
+  }
+  
+  .aboutTitle {
+    font-size: 16px;
+    margin: 15px 0;
+    padding-top: 15px;
+  }
+  
+  .aboutPropertyTitle {
+    font-size: 14px;
+    padding-top: 30px;
+  }
+  
+  .aboutOverflowLink {
+    display: none;
+  }
+  
+  .policies ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .policies li {
+    margin-bottom: 8px;
+  }
+  
+  .aboutAmenities {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .aboutAmenitiesIcons {
+    grid-column: 3 / span 4;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .aboutAmenitiesGrid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .aboutAmenitiesGrid p {
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+    color: #333;
+    align-items: center;
+  }
+  
+  .aboutAmenitiesGrid a {
+    text-decoration: none;
+    color: #1264e3;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .aboutContainerHalf {
+      height: 1100px;
+      overflow: auto;
+      overflow-y: hidden;
+      position: relative;
+    }
+  
+    .aboutContainerHalf:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1)
+      );
+      pointer-events: none;
+    }
+  
+    .aboutOverflowLink {
+      color: #006ce6;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+    }
+  
+    .aboutAmenities {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .aboutAmenitiesHead {
+      grid-column: 1;
+    }
+  
+    .aboutAmenitiesIcons {
+      grid-column: 1;
+      display: flex;
+      justify-content: start;
+      gap: 80px;
+    }
+  
+    .aboutContainer h1 {
+      font-size: 20px;
+    }
+  }

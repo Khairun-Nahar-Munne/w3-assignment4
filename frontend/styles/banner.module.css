@@ -1,0 +1,167 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .bannerHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bannerHead a {
+    text-decoration: none;
+  }
+  
+  .bannerHeadItem1 {
+    color: rgba(0, 140, 255, 0.938);
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .bannerHeadItem2 {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .bannerHeadItem {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    background: white;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+    font-weight: 600;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .bannerShare, .bannerSave {
+    all: unset;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    background: white;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 0.5rem;
+  }
+  
+  .sharePopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    z-index: 100;
+    width: 400px;
+  }
+  
+  .shareContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .shareImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 16px;
+  }
+  
+  .shareInfo h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  
+  .shareInfo p {
+    margin: 4px 0;
+  }
+  
+  .shareOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+  
+  .shareOption {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  .shareOption svg {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .sharePopupClose {
+    all: unset;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  .copyLink.copied {
+    color: #22c55e; /* This is a green color, you can adjust it */
+  }
+  
+  .copyLink.copied span {
+    color: #22c55e;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .banner {
+       
+        margin-bottom: 0px;
+      }
+    .bannerHead {
+      position: absolute;
+      margin-top: 1rem;
+      width: 75%;
+      justify-content: space-between;
+      z-index: 10;
+    }
+  
+    .bannerHeadItem span {
+      display: none;
+    }
+  
+    .bannerHeadItem {
+      padding: 8px 8px;
+      border-radius: 50%;
+    }
+  
+    .bannerHeadItem1 {
+      background: rgba(255, 255, 255, 0.238);
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  
+    .sharePopup {
+      width: 90%;
+    }
+  }
