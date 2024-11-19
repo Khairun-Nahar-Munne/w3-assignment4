@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Room } from '@/types/hotel';
-import { Bed, ImageOff } from 'lucide-react';
+import { Bed, BedIcon, ImageOff } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -10,8 +10,9 @@ interface Props {
 
 const RoomList: React.FC<Props> = ({ rooms }) => {
   return (
-    <div className="mb-8">
-      <h2 className="text-2xl font-semibold mb-4">Available Rooms</h2>
+    <>
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">Rooms & beds</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {rooms.map((room) => (
           <Link
@@ -26,7 +27,7 @@ const RoomList: React.FC<Props> = ({ rooms }) => {
                   roomTitle={room.roomTitle}
                 />
               </div>
-              <div className="p-4">
+              <div className="pt-4">
                 <h3 className="text-lg font-semibold mb-2">{room.roomTitle}</h3>
                 <div className="flex items-center gap-2">
                   <Bed className="w-4 h-4 text-gray-500" />
@@ -37,7 +38,36 @@ const RoomList: React.FC<Props> = ({ rooms }) => {
           </Link>
         ))}
       </div>
+      <div className=" mt-4">
+      <h2 className="text-lg font-semibold mb-2">Spaces</h2>
+      <ul className="list-none">
+        <li className="flex items-center py-0.5">
+          <span className="mr-2.5 text-lg">🏡</span>
+          <p className="text-sm">Deck or patio</p>
+        </li>
+        <li className="flex items-center py-0.5">
+          <span className="mr-2.5 text-lg">🍳</span>
+          <p className="text-sm">Kitchen</p>
+        </li>
+        <li className="flex items-center py-0.5">
+          <span className="mr-2.5 text-lg">☘️</span>
+          <p className="text-sm">Balcony</p>
+        </li>
+        <li className="flex items-center py-0.5">
+          <span className="mr-2.5 text-lg">🌳</span>
+          <p className="text-sm">Garden</p>
+        </li>
+      </ul>
+      <Link 
+        href="#" 
+        className="text-blue-600 hover:underline inline-block mt-4 text-sm"
+      >
+        See all rooms and beds details
+      </Link>
     </div>
+    </div>
+  </>
+    
   );
 };
 

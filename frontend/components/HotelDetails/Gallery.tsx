@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AlertCircle, ChevronLeft, ChevronRight, X } from "lucide-react";
+import styles from "@/styles/gallery.module.css";
 
 interface GalleryProps {
   images: string[];
@@ -52,12 +53,15 @@ const Gallery: React.FC<GalleryProps> = ({ images, title, className = "" }) => {
     setShowGallery(false);
   };
 
+  // Display only first two images in the grid
+  const displayImages = images.slice(0, 2);
+
   return (
     <>
       <div
-        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${className}`}
+        className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${className}`}
       >
-        {images.map((image, index) => (
+        {displayImages.map((image, index) => (
           <div key={index} className="relative aspect-square cursor-pointer">
             <ImageWithFallback
               src={getImageUrl(image)}
@@ -65,10 +69,11 @@ const Gallery: React.FC<GalleryProps> = ({ images, title, className = "" }) => {
               alt={`Gallery image ${index + 1}`}
               onClick={() => handleClickImage(index)}
             />
-            {index === images.length - 1 && (
-              <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md">
-                <AlertCircle className="w-5 h-5 inline-block mr-1" />
-                View Gallery
+            {index === displayImages.length - 1 && (
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md cursor-pointer"
+                   onClick={() => setShowGallery(true)}>
+                    <i className="fa-regular fa-image w-5 h-5 inline-block mr-1"></i>
+                {images.length}
               </div>
             )}
           </div>
@@ -76,39 +81,39 @@ const Gallery: React.FC<GalleryProps> = ({ images, title, className = "" }) => {
       </div>
 
       {showGallery && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-[#1e253a] flex items-center justify-center">
-        <div className="relative w-full h-3/4 max-w-5xl mx-4 md:mx-0">
-          <ImageWithFallback
-            src={getImageUrl(images[currentIndex])}
-            index={currentIndex}
-            alt={`Gallery image ${currentIndex + 1}`}
-          />
-          <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md">
-            {title}
-          </div>
-          <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md">
-            {currentIndex + 1}/{images.length}
-          </div>
-          <div className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer">
-            <ChevronLeft
-              onClick={handlePrevImage}
-              className="w-8 h-8 text-white"
-            />
-          </div>
-          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
-            <ChevronRight
-              onClick={handleNextImage}
-              className="w-8 h-8 text-white"
-            />
-          </div>
-          <div
-            className="absolute top-4 right-4 cursor-pointer"
-            onClick={handleCloseGallery}
-          >
-            <X className="w-8 h-8 text-white" />
+        <div className={styles.galleryPopup}>
+          <div className={styles.galleryPopupContent}>
+            <div className={styles.closeButton} onClick={handleCloseGallery}>
+              &times;
+            </div>{" "}
+            <br />
+            <div id="gallery-image" className="mx-auto mb-3 w-3/4">
+              <ImageWithFallback
+                src={getImageUrl(images[currentIndex])}
+                index={currentIndex}
+                alt={`Gallery image ${currentIndex + 1}`}
+              />
+            </div>
+            <div className={styles.popupTitle}>
+              {title}
+            </div>
+            <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md">
+              {currentIndex + 1}/{images.length}
+            </div>
+            <div className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer">
+              <ChevronLeft
+                onClick={handlePrevImage}
+                className="w-8 h-8 text-blue bg-white rounded-full "
+              />
+            </div>
+            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+              <ChevronRight
+                onClick={handleNextImage}
+                className="w-8 h-8 text-blue bg-white rounded-full"
+              />
+            </div>
           </div>
         </div>
-      </div>
       )}
     </>
   );

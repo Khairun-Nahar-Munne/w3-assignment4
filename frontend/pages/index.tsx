@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>W3 Assignment 4</title>
+        <title>Juneau Vacation Home: Stunning View + Beach Access</title>
         <meta name="description" content="Hotel booking application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -36,6 +36,7 @@ const Home: NextPage = () => {
         </main>
         <footer>
           <Footer/>
+        
         </footer>
       </div>
     </>
