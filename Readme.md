@@ -169,9 +169,13 @@ Follow these instructions to set up the project locally for development and test
 
 You will see the webpage at http://localhost:3000/
 
+https://github.com/Khairun-Nahar-Munne/w3-assignment4/blob/1508c3852c47448b92481afa9ef8c1da3c389af3/frontend/public/hotel.png
+
 You can see hotel details at http://localhost:3000/hotel-details/ocean-breeze-resort/1731479202985
 
 You have to give your hotel id and slug name of hotel
+
+https://github.com/Khairun-Nahar-Munne/w3-assignment4/blob/1508c3852c47448b92481afa9ef8c1da3c389af3/frontend/public/hotelDetails.png
 
 #### Production Mode:
 ```bash
