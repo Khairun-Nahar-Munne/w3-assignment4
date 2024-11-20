@@ -175,7 +175,7 @@ You can see hotel details at http://localhost:3000/hotel-details/ocean-breeze-re
 
 You have to give your hotel id and slug name of hotel
 
-https://github.com/Khairun-Nahar-Munne/w3-assignment4/blob/1508c3852c47448b92481afa9ef8c1da3c389af3/frontend/public/hotelDetails.png
+frontend/public/hotelDetails.png
 
 #### Production Mode:
 ```bash
