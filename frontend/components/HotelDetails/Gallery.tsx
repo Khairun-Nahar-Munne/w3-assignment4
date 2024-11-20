@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { AlertCircle, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { AlertCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "@/styles/gallery.module.css";
 
 interface GalleryProps {

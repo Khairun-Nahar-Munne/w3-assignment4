@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Room } from '@/types/hotel';
-import { Bed, BedIcon, ImageOff } from 'lucide-react';
+import { Bed, ImageOff } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 

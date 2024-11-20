@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Banner from '@/components/Banner';
-import ShareModal from '@/components/BModal';
 
 // Mock FontAwesomeIcon component to avoid potential rendering issues in tests
 jest.mock('@fortawesome/react-fontawesome', () => ({

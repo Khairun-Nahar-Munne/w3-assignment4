@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { Calendar, User, Info, CheckCircle  } from 'lucide-react';
 interface TravelerCounts {
@@ -83,6 +82,7 @@ export default function BookingCard() {
 
             <div className="relative mb-6">
               <div
+              data-testid="travelers-button"
                 className="border rounded p-3 cursor-pointer"
                 onClick={() => setIsPopupOpen(!isPopupOpen)}
               >

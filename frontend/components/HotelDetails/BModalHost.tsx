@@ -1,6 +1,4 @@
-interface Props {
-  amenities: string[];
-}
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faLink } from "@fortawesome/free-solid-svg-icons";
 import {

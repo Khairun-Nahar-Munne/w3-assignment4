@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '@/styles/banner.module.css';
 import BModalHost from '@/components/HotelDetails/BModalHost';
-import Gallery from './Gallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faArrowLeft, 

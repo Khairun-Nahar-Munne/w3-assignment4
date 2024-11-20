@@ -1,7 +1,6 @@
 import { Hotel } from "@/types/hotel";
 import {
   MapPin,
-  User,
   Bed,
   Bath,
   ChevronRight,
@@ -112,7 +111,7 @@ const HotelInfo: React.FC<Props> = ({ hotel }) => {
                   <h2 className="text-2xl font-bold">Explore the area</h2>
                   <div className="flex flex-col md:flex-row gap-4">
                     <div className="md:w-1/2 rounded-lg overflow-hidden shadow-md border border-gray-200">
-                      <div className="h-[250px] bg-cover bg-center bg-[url('/img6.png')]" />
+                      <div className="h-[150px] bg-cover bg-center bg-[url('/img6.png')]" />
                       <div className="p-4">
                       <span>{`${hotel.address.city}, ${hotel.address.country}`}</span> <br />
                         <a

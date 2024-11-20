@@ -6,7 +6,6 @@ import * as React from 'react';
 jest.mock('next/image', () => ({
   __esModule: true,
   default: function MockImage(props: ImageProps) {
-    // eslint-disable-next-line jsx-a11y/alt-text
     return React.createElement('img', {
       src: typeof props.src === 'string' ? props.src : 'test-path',
       width: props.width,

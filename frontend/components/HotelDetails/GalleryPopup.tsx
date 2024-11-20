@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
 
 interface GalleryPopupProps {
