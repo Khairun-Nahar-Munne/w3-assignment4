@@ -2,19 +2,6 @@
 
 A modern hotel management system built with Next.js, TypeScript, and Node.js, featuring server-side rendering, dynamic routing, and comprehensive testing.
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup Instructions](#setup-instructions)
-- [API Endpoints](#api-endpoints)
-- [Project Structure](#project-structure)
-- [Testing](#testing)
-- [Coding Standards](#coding-standards)
-- [Error Handling](#error-handling)
-- [SEO](#seo)
-- [Contribution](#contribution)
-- [License](#license)
 
 ## Features
 
@@ -179,6 +166,12 @@ Follow these instructions to set up the project locally for development and test
 ```bash
 - npm run dev
 ```
+
+You will see the webpage at http://localhost:3000/
+
+You can see hotel details at http://localhost:3000/hotel-details/ocean-breeze-resort/1731479202985
+
+You have to give your hotel id and slug name of hotel
 
 #### Production Mode:
 ```bash
